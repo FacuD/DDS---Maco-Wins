@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Prenda remera = new Prenda(300, new NuevaPrenda());
         Prenda zapas = new Prenda(2000, new Liquidacion());
-        Prenda pantalon = new Prenda( 3000.0, new Promocion(1000));
+        Prenda pantalon = new Prenda( 3000, new Promocion(1000));
 
         Item item1 = new Item(remera, 3);
         Item item2 = new Item(zapas, 2);
@@ -19,7 +19,7 @@ public class Main {
         items.add(item2);
         items.add(item3);
 
-        Venta ventaEfectivo = new Venta(items, LocalDate.now());
+        Venta ventaEfectivo = new VentaEfectivo(LocalDate.now(), items);
         //items, LocalDate fecha, int cantCuotas, double coeficiente
         VentaTarjeta ventaTarjeta = new VentaTarjeta(items, LocalDate.now(), 5, 0.3);
 
